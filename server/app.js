@@ -5,8 +5,8 @@ const path = require('path')
 const app = express()
 const port = 5000
 
-var imagePath = path.join(path.resolve(__dirname), '/images/');
-let jsonPath = path.join(path.resolve(__dirname,), '/data/articles.json');
+var imagePath = path.join(__dirname, '/images/');
+let jsonPath = path.join(__dirname, '/data/articles.json');
 
 app.use('/images', express.static(path.join(__dirname, 'images')))
 
@@ -24,8 +24,10 @@ app.get('/files', getDirectoryContent, (req, res) => {
             obj.desc = jsonData[i].description
             arr.push(obj)
         }
+        res.setHeader('Content-Type', 'application/json');
         console.log("Object is: " + JSON.stringify(arr))
         res.json(arr)
+        .end()
     })
 
 
