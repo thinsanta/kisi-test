@@ -34,10 +34,13 @@ function App() {
   return (
     <div className="App">
       <button onClick={getInfo}>click</button>
-
+      <div className='container'>
       {serverInfo?.map((data, index) =>{
-        return <div key={index}>{data.title}</div>
+        return <div key={index} className={`item-${index}`}>
+            {data.title}
+          </div>
       })}
+      </div>
     </div>
   );
 }
