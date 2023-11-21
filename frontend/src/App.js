@@ -36,7 +36,7 @@ function App() {
       <div className='container'>
         <div className='message'>Connect people & spaces</div>
       {serverInfo?.map((data, index) =>{
-        return <img key={index} className={`item-${index}`} src={`http://localhost:3000/images/${data.image}`}>
+        return <img key={index} className={`item item-${index}`} src={`http://localhost:3000/images/${data.image}`}>
           
         </img>
       })}
