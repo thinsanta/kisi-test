@@ -4,7 +4,7 @@ var fs = require('fs');
 const path = require('path')
 const multer = require('multer');
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000
 
 var imagePath = path.join(__dirname, '/images/');
 let jsonPath = path.join(__dirname, '/data/articles.json');
