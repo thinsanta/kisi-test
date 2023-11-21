@@ -97,13 +97,23 @@ img {
 }
 
 .button{
-  grid-column: 11 / 12;
-  grid-row: 9 / 10;
+
   background: #4A52FF;
   height: 37px;
   font-size: 19px;
   border-radius: 35px;
   border: none;
+  width: 110px;
+}
+
+.upload{
+  grid-column: 11 / 12;
+  grid-row: 9 / 10;
+}
+
+.button:hover{
+  cursor: pointer;
+  background-color: #222647;
 }
 
 
@@ -113,7 +123,7 @@ img {
   grid-row: 2 / 2;
   justify-self: baseline;
   align-self: center;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .item-0{

@@ -1,8 +1,14 @@
 import './App.css';
 import {useState, useEffect} from 'react'
+import postImage from './apiCall/postImage';
+
 function App() {
 
   const [serverInfo, setServerInfo] = useState()
+  // The response you get back from the server is stored here
+  const [backend, setBackend] = useState()
+  // The file that you upload from client side is stored here
+  const [fileUpload, setFileUpload] = useState()
 
   const getInfo = async() =>{
     console.log(serverInfo)
@@ -25,6 +31,12 @@ function App() {
 
   }
 
+    // Handles the file so that it gets stored to setFileUpload
+    const fileHandler = (e) => {
+      setFileUpload(e.target.files[0])
+    }
+  
+
   useEffect(() => {
     getInfo()
   }, [])
@@ -46,7 +58,11 @@ function App() {
           </div>
         </div> 
       })}
-      <button className='button' onClick={getInfo}>Button</button>
+      <div className='upload'>
+        <input type="file" name="fileToUpload" onChange={fileHandler}/>
+        <button className='button' onClick={() => postImage(fileUpload, getInfo)}>Button</button>
+      </div>
+      
       </div>
     </div>
   );

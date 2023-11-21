@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
   },
   "name": "kisi-marketing-technical-test",
   "description": "This is a boilerplate repository used for Kisi's marketing technical challenge. It comes with an [images](./images/) directory pre-populated with some images and a [data](./data/) directory with simple articles which will be used in the challenge.",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
