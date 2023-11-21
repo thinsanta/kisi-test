@@ -14,7 +14,7 @@ function App() {
       // Notice we only use "/files" without the full URL.
       // The URL is in package.json file, with the key "proxy".
       // This also removes CORS errors!
-      const response = await fetch('/files')
+      const response = await fetch('https://kisi-test-production-98a5.up.railway.app/files')
       //check if the response is not OK!
       if(!response.ok){
         console.log("Respsonse is not ok! " + response)
