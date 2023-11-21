@@ -17,6 +17,74 @@
   border-radius: 5px;
 }
 
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  background-color: transparent;
+  width: 70%;
+}
+
+.bottom-right {
+    border: solid #ffff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    background: transparent;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: absolute;
+    bottom: 15px;
+    right: 16px;
+}
+
+.item{
+  position: relative;
+  font-size: 19px;
+}
+
+img { 
+  transition: 0.3s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: #4A52FF;
+}
+
+.overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.title-text {
+  position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: transparent;
+  width: 100%;
+}
+
+.desc-text {
+  position: relative;
+  top: 15px;
+  margin-left: 10px;
+  background-color: transparent;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical
+}
+
 @media screen and (min-width: 901px) {
   
 

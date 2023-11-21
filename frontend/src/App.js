@@ -36,9 +36,15 @@ function App() {
       <div className='container'>
         <div className='message'>Connect people & spaces</div>
       {serverInfo?.map((data, index) =>{
-        return <img key={index} className={`item item-${index}`} src={`http://localhost:3000/images/${data.image}`}>
-          
-        </img>
+        return <div key={index} className={`item item-${index}`}>
+          <img  src={`http://localhost:3000/images/${data.image}`}/>
+          <div class="top-left">{data.title}</div>
+          <i className='bottom-right'></i>
+          <div class="overlay">
+            <div class="title-text">{data.title}</div>
+            <div class="desc-text">{data.desc}</div>
+          </div>
+        </div> 
       })}
       <button className='button' onClick={getInfo}>Button</button>
       </div>
