@@ -13,7 +13,13 @@ const storage = multer.diskStorage({
   destination: './images',
   filename: (req, file, cb) => {
     const uniqueFilename = Date.now() + '-' + file.originalname;
-    cb(null, uniqueFilename);
+    const fileExtension = file.originalname.split('.').pop();
+
+    if (['png', 'jpg'].includes(fileExtension)) {
+      cb(null, uniqueFilename);
+    } else {
+      cb(new Error('Only .png and .jpg images are allowed'));
+    }
   },
 });
 

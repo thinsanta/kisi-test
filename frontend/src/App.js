@@ -5,8 +5,6 @@ import postImage from './apiCall/postImage';
 function App() {
 
   const [serverInfo, setServerInfo] = useState()
-  // The response you get back from the server is stored here
-  const [backend, setBackend] = useState()
   // The file that you upload from client side is stored here
   const [fileUpload, setFileUpload] = useState()
 
@@ -33,7 +31,16 @@ function App() {
 
     // Handles the file so that it gets stored to setFileUpload
     const fileHandler = (e) => {
-      setFileUpload(e.target.files[0])
+      //setFileUpload(e.target.files[0])
+      const selectedFile = e.target.files[0];
+      const fileExtension = selectedFile.name.split('.').pop();
+
+      if (['png', 'jpg'].includes(fileExtension)) {
+        setFileUpload(selectedFile);
+      } else {
+        alert('Only .png and .jpg images are allowed');
+        setFileUpload(selectedFile);
+      }
     }
   
 

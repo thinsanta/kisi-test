@@ -41,6 +41,8 @@
 .item{
   position: relative;
   font-size: 19px;
+  grid-column: span 3;
+  grid-row: span 3;
 }
 
 img { 
