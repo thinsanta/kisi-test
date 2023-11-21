@@ -16,8 +16,6 @@ app.get('/files', getDirectoryContent, (req, res) => {
     
     fs.readFile(jsonPath, 'utf8', function (err, data) {
         let jsonData = JSON.parse(data);
-        //console.log(jsonData)
-        //res.writeHead(200, {'Content-Type': 'text/plain'});
         for (var i=0; i<res.locals.filenames.length; i++){
             const obj = {}
             obj.title = jsonData[i].title
