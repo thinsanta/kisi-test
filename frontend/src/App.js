@@ -29,17 +29,18 @@ function App() {
     getInfo()
   }, [])
   
-
+/*{data.title}*/
 
   return (
     <div className="App">
-      <button onClick={getInfo}>click</button>
       <div className='container'>
+        <div className='message'>Connect people & spaces</div>
       {serverInfo?.map((data, index) =>{
-        return <div key={index} className={`item-${index}`}>
-            {data.title}
-          </div>
+        return <img key={index} className={`item-${index}`} src={`http://localhost:3000/images/${data.image}`}>
+          
+        </img>
       })}
+      <button className='button' onClick={getInfo}>Button</button>
       </div>
     </div>
   );
