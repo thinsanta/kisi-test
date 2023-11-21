@@ -20,6 +20,7 @@ app.get('/files', getDirectoryContent, (req, res) => {
             const obj = {}
             obj.title = jsonData[i].title
             obj.desc = jsonData[i].description
+            obj.image = res.locals.filenames[i]
             arr.push(obj)
         }
         res.setHeader('Content-Type', 'application/json');
