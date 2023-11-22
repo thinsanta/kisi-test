@@ -18,7 +18,7 @@ const postImage = async (fileUpload, getInfo, setShowButton, showButton) => {
       if(!response.ok){
         console.log("Respsonse is not ok! " + JSON.stringify(response))
       }
-      setShowButton(!showButton);
+      setShowButton(true);
 
       getInfo()
 
