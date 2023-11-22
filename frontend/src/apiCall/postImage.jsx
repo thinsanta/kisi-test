@@ -1,4 +1,5 @@
-const postImage = async (fileUpload, getInfo) => {
+const postImage = async (fileUpload, getInfo, setShowButton, showButton) => {
+    setShowButton(!showButton);
     // Creates FormData from the file so it can be used to send
     const formData = new FormData()
     formData.append('image', fileUpload)
@@ -17,6 +18,7 @@ const postImage = async (fileUpload, getInfo) => {
       if(!response.ok){
         console.log("Respsonse is not ok! " + JSON.stringify(response))
       }
+      setShowButton(!showButton);
 
       getInfo()
 

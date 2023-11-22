@@ -11,7 +11,7 @@ function App() {
   const [showButton, setShowButton] = useState(false);
 
   const getInfo = async() =>{
-    setShowButton(!showButton);
+
     try{
       // Notice we only use "/files" without the full URL.
       // The URL is in package.json file, with the key "proxy".
@@ -20,12 +20,10 @@ function App() {
       //check if the response is not OK!
       if(!response.ok){
         console.log("Respsonse is not ok! " + response)
-        setShowButton(!showButton);
       }
       // If response is OK then we want that data to be stored in "setBack"
       const data = await response.json()
       setServerInfo(data)
-      setShowButton(!showButton);
 
     }catch(err){
       console.log("error occured: " + err)
@@ -70,7 +68,7 @@ function App() {
       })}
       <div className='upload'>
         <input type="file" name="fileToUpload" onChange={fileHandler}/>
-        {showButton && <button className='button' onClick={() => postImage(fileUpload, getInfo)}>Toggle Button</button>}
+        {showButton && <button className='button' onClick={() => postImage(fileUpload, getInfo, setShowButton, showButton)}>Toggle Button</button>}
       </div>
       
       </div>
