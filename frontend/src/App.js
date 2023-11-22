@@ -68,7 +68,7 @@ function App() {
       })}
       <div className='upload'>
         <input type="file" name="fileToUpload" onChange={fileHandler}/>
-        {showButton && <button className='button' onClick={() => postImage(fileUpload, getInfo, setShowButton, showButton)}>Toggle Button</button>}
+        {showButton && <button className='button' onClick={() => postImage(fileUpload, getInfo, setShowButton, showButton)}>Button</button>}
       </div>
       
       </div>
