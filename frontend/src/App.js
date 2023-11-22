@@ -56,7 +56,7 @@ function App() {
         <div className='message'>Connect people & spaces</div>
       {serverInfo?.map((data, index) =>{
         return <div key={index} className={`item item-${index}`}>
-          <img  src={`http://localhost:3000/images/${data.image}`}/>
+          <img  src={`https://kisi-test-production-98a5.up.railway.app/images/${data.image}`}/>
           <div class="top-left">{data.title}</div>
           <i className='bottom-right'></i>
           <div class="overlay">
