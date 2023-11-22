@@ -7,9 +7,11 @@ function App() {
   const [serverInfo, setServerInfo] = useState()
   // The file that you upload from client side is stored here
   const [fileUpload, setFileUpload] = useState()
+  // Button state
+  const [showButton, setShowButton] = useState(false);
 
   const getInfo = async() =>{
-    console.log(serverInfo)
+    setShowButton(!showButton);
     try{
       // Notice we only use "/files" without the full URL.
       // The URL is in package.json file, with the key "proxy".
@@ -18,10 +20,12 @@ function App() {
       //check if the response is not OK!
       if(!response.ok){
         console.log("Respsonse is not ok! " + response)
+        setShowButton(!showButton);
       }
       // If response is OK then we want that data to be stored in "setBack"
       const data = await response.json()
       setServerInfo(data)
+      setShowButton(!showButton);
 
     }catch(err){
       console.log("error occured: " + err)
@@ -31,7 +35,6 @@ function App() {
 
     // Handles the file so that it gets stored to setFileUpload
     const fileHandler = (e) => {
-      //setFileUpload(e.target.files[0])
       const selectedFile = e.target.files[0];
       const fileExtension = selectedFile.name.split('.').pop();
 
@@ -67,7 +70,7 @@ function App() {
       })}
       <div className='upload'>
         <input type="file" name="fileToUpload" onChange={fileHandler}/>
-        <button className='button' onClick={() => postImage(fileUpload, getInfo)}>Button</button>
+        {showButton && <button className='button' onClick={() => postImage(fileUpload, getInfo)}>Toggle Button</button>}
       </div>
       
       </div>

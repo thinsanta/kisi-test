@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 
 // Enable CORS
 const corsOptions = {
-  origin: '*',
+  origin: 'https://jocular-sunflower-36535e.netlify.app',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
@@ -56,7 +56,7 @@ app.get('/files', getDirectoryContent, cors(corsOptions), (req, res) => {
 })
 
 // The request to make the upload of image is done here
-app.post('/upload', upload.single('image'), async (req, res) => {
+app.post('/upload', upload.single('image'), cors(corsOptions), async (req, res) => {
   const imageUrl = req.file.path;
 
   try {
