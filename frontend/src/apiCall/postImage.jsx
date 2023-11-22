@@ -7,7 +7,7 @@ const postImage = async (fileUpload, getInfo) => {
       // Notice we only use "/process" without the full URL.
       // The URL is in package.json file, with the key "proxy".
       // This also removes CORS errors!
-      const response = await fetch('/upload', {
+      const response = await fetch('https://kisi-test-production-98a5.up.railway.app/upload', {
         
         method: 'POST',
         body: formData
