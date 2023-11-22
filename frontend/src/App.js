@@ -8,7 +8,7 @@ function App() {
   // The file that you upload from client side is stored here
   const [fileUpload, setFileUpload] = useState()
   // Button state
-  const [showButton, setShowButton] = useState(false);
+  const [showButton, setShowButton] = useState(true);
 
   const getInfo = async() =>{
 
